@@ -9,6 +9,4 @@ RUN rustup target add wasm32-unknown-unknown
 RUN cargo install --locked cargo-leptos
 RUN cargo leptos build --release
 
-
-
 CMD ["cargo", "leptos", "serve", "--release"]
