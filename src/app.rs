@@ -10,6 +10,7 @@ pub fn App(cx: Scope) -> impl IntoView {
     view! {
         cx,
         <Stylesheet id="leptos" href="/pkg/start-axum.css"/>
+        //<Stylesheet href="/start-axum.css"/>
         <Title text="Test Leptos Webapp"/>
 
         // content for this welcome page

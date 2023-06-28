@@ -4,7 +4,7 @@
 #[tokio::main]
 async fn main() {
     use axum::{extract::Extension, routing::post, Router};
-    use leptos::*;
+    use leptos::{*, get_configuration};
     use leptos_axum::{generate_route_list, LeptosRoutes};
     use start_axum::app::*;
     use start_axum::fileserv::file_and_error_handler;
@@ -18,6 +18,7 @@ async fn main() {
     // Alternately a file can be specified such as Some("Cargo.toml")
     // The file would need to be included with the executable when moved to deployment
     let conf = get_configuration(None).await.unwrap();
+    //let conf = get_configuration(Some("Cargo.toml")).await.unwrap();
     let leptos_options = conf.leptos_options;
     let addr = leptos_options.site_addr;
     let routes = generate_route_list(|cx| view! { cx, <App/> }).await;
